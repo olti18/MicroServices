@@ -11,6 +11,7 @@ import com.oltiberisha.cards.service.ICardsService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.Random;
 
@@ -34,6 +35,8 @@ public class CardsServiceImpl implements ICardsService {
         long randomCardNumber = 100000000000L + new Random().nextInt(900000000);;
         newCard.setCardNumber(Long.toString(randomCardNumber));
         newCard.setMobileNumber(mobileNumber);
+        newCard.setCreatedBy("Admin");
+        newCard.setCreatedAt(LocalDateTime.now());
         newCard.setCardType(CardsConstans.CREDIT_CARD);
         newCard.setTotalLimit(CardsConstans.NEW_CARD_LIMIT);
         newCard.setAvailableAmount(CardsConstans.NEW_CARD_LIMIT);
@@ -57,10 +60,7 @@ public class CardsServiceImpl implements ICardsService {
         return  true;
     }
 
-    /**
-     * @param mobileNumber - Input MobileNumber
-     * @return boolean indicating if the delete of card details is successful or not
-     */
+
     @Override
     public boolean deleteCard(String mobileNumber) {
         Cards cards = cardsRepository.findByMobileNumber(mobileNumber).orElseThrow(
