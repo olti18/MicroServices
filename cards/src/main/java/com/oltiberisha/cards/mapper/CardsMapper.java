@@ -1,5 +1,6 @@
 package com.oltiberisha.cards.mapper;
 
+import com.oltiberisha.cards.dto.CardsDto;
 import com.oltiberisha.cards.entity.Cards;
 
 public class CardsMapper {
