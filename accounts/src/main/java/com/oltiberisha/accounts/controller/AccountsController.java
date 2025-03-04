@@ -4,6 +4,7 @@ import com.oltiberisha.accounts.constans.AccountConstans;
 import com.oltiberisha.accounts.dto.CustomerDto;
 import com.oltiberisha.accounts.dto.ResponseDto;
 import com.oltiberisha.accounts.service.IAccountService;
+import com.oltiberisha.accounts.dto.AccountsDto;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
@@ -11,14 +12,12 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import java.awt.*;
 
 @Tag(name = "CRUD REST APIs for Accounts",
         description = "CRUD REST APIs for Accounts to CREATE UPDATE DELETE and FETCH Account Details")
