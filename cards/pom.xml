@@ -79,19 +79,7 @@
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>com.google.cloud.tools</groupId>
-                <artifactId>jib-maven-plugin</artifactId>
-                <version>3.4.4</version>
-                <configuration>
-<!--                    <from>-->
-<!--                        <image>eclipse-temurin:23-jdk</image>  &lt;!&ndash; Java 23 base image &ndash;&gt;-->
-<!--                    </from>-->
-                    <to>
-                        <image>oltiberisha/${project.artifactId}</image> <!--	For Docker image "mvn compile jib:dockerBuild" -->
-                    </to>
-                </configuration>
-            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -108,6 +96,9 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
+                    <image>
+                        <name>oltiberisha/${project.artifactId}</name> <!--	For Docker image "mvn spring-boot:build-image" -->
+                    </image>
                     <excludes>
                         <exclude>
                             <groupId>org.projectlombok</groupId>
@@ -116,6 +107,8 @@
                     </excludes>
                 </configuration>
             </plugin>
+
+
 
         </plugins>
     </build>

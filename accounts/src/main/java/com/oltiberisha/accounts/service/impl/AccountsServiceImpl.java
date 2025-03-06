@@ -93,7 +93,7 @@ public class AccountsServiceImpl implements IAccountService {
     private Accounts createNewAccount(Customer customer) {
         Accounts newAccount = new Accounts();
         newAccount.setCustomerId(customer.getCustomerId());
-        //long randomAccNumber = 1000000000L + new Random().nextLong(9000000000L);
+      
 
         long randomAccNumber = 1000000000L + Math.abs(new Random().nextLong() % 9000000000L);
 
