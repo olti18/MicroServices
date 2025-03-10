@@ -13,6 +13,7 @@ import com.oltiberisha.accounts.repository.AccountsRepository;
 import com.oltiberisha.accounts.repository.CustomerRepository;
 import com.oltiberisha.accounts.service.IAccountService;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -20,12 +21,16 @@ import java.util.Optional;
 import java.util.Random;
 
 @Service
-@AllArgsConstructor
+//@AllArgsConstructor
 public class AccountsServiceImpl implements IAccountService {
 
     private final AccountsRepository accountsRepository;
     private final  CustomerRepository customerRepository;
-
+    @Autowired
+    public AccountsServiceImpl(AccountsRepository accountsRepository, CustomerRepository customerRepository) {
+        this.accountsRepository = accountsRepository;
+        this.customerRepository = customerRepository;
+    }
     @Override
     public void createAccount(CustomerDto customerDto) {
         Customer customer = CustomerMapper.mapToCustomer(customerDto, new Customer());
