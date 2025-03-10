@@ -9,16 +9,16 @@
         <outputRelativeToContentRoot value="true" />
         <module name="configserver" />
       </profile>
-      <profile name="Annotation profile for loans" enabled="true">
+      <profile name="Annotation profile for accounts" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
+        <processorPath>
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
         </processorPath>
         <module name="loans" />
-        <module name="cards" />
         <module name="accounts" />
+        <module name="cards" />
       </profile>
     </annotationProcessing>
   </component>
