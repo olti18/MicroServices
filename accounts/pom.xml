@@ -118,6 +118,9 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
+					<image>
+						<name>oltiberisha/${project.artifactId}</name> <!--	For Docker image "mvn spring-boot:build-image" -->
+					</image>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>

@@ -49,6 +49,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
@@ -67,7 +68,13 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+				<image>
+					<name>oltiberisha/${project.artifactId}</name> <!--	For Docker image "mvn spring-boot:build-image" -->
+				</image>
+				</configuration>
 			</plugin>
+
 		</plugins>
 	</build>
 
