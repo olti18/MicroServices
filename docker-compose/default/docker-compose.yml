@@ -42,7 +42,7 @@ services:
           configserver:
             condition: service_healthy
         environment:
-          SPRING_APPLIACTION_NAME: "accounts"
+          SPRING_APPLICATION_NAME: "accounts"
         extends:
           file: common-config.yml
           service: microservice-configserver-config
